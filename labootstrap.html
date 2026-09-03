@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fresh Taste</title>
+<style>
+body {font-family: Arial;
+   margin: 0;
+   background: #fff8f0;
+   color: #333;}
+nav {padding: 20px 8%;
+   display: flex;
+   justify-content: space-between;
+   background: #fff;}
+nav b {color: #e67e22;
+   font-size: 22px;}
+nav a {margin: 15px;
+   text-decoration: none;
+   color: #555;}
+nav a:hover {color: #e67e22;}
+.hero {width: 80%;
+   height: 350px;
+   margin: 30px auto;
+   border-radius: 20px;
+   background:
+   linear-gradient(rgba(80,40,10,.45),rgba(80,40,10,.45)),
+   url("https://images.unsplash.com/photo-1546069901-ba9599a7e63c")
+   center/cover;
+   color: white;
+   text-align: center;
+   padding-top: 100px;}
+.hero h1 {font-size: 48px;}
+.hero button {background: #e67e22;
+   color: white;}
+button {padding: 10px 20px;
+   border: 0;
+   border-radius: 20px;
+   cursor: pointer;}
+button:hover {background: #cf6510;}
+.features {display: flex;
+   justify-content: space-around;
+   text-align: center;
+   padding: 50px;}
+.features h2 {color: #e67e22;
+   font-size: 30px;}
+.features p {color: #777;}
+.menu {background: #fff0df;
+   padding: 50px;
+   text-align: center;}
+.menu > p {color: #e67e22;
+   letter-spacing: 3px;}
+.menu h1 {color: #8b4513;}
+.food {display: flex;
+   justify-content: center;
+   gap: 25px;}
+.card {background: white;
+   width: 250px;
+   padding: 15px;
+   border-radius: 15px;
+   box-shadow: 0 5px 15px #ddd;}
+.card img {width: 100%;
+   height: 160px;
+   object-fit: cover;
+   border-radius: 10px;}
+.card h3 {color: #8b4513;}
+.card p {color: #e67e22;
+   font-weight: bold;}
+.card button {background: #e67e22;
+   color: white;}
+footer {background: #8b4513;
+   color: white;
+   text-align: center;
+   padding: 20px;}
+</style>
+</head>
+<body>
+<nav>
+<b>🍴 Fresh Taste</b>
+<div>
+<a href="#">Home</a>
+<a href="#menu">Menu</a>
+<a href="#">About</a>
+</div>
+</nav>
+
+<div class="hero">
+<p>WELCOME</p>
+<h1>
+Fresh Taste,<br>
+Everyday Delight
+</h1>
+<p>
+Enjoy delicious meals made with love.
+</p>
+<button onclick="order()">
+สั่งเลย
+</button>
+</div>
+
+<div class="features">
+<div>
+<h2>⚡</h2>
+<h3>Fast Delivery</h3>
+<p>Quick and reliable delivery.</p>
+</div>
+<div>
+<h2>✓</h2>
+<h3>Quality Assurance</h3>
+<p>Fresh food and good quality.</p>
+</div>
+<div>
+<h2>★</h2>
+<h3>Expert Support</h3>
+<p>We are ready to help you.</p>
+</div>
+</div>
+
+<div class="menu" id="menu">
+<p>OUR MENU</p>
+<h1>Delicious Food</h1>
+
+<div class="food">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947">
+<h3>Grilled Steak</h3>
+<p>฿290</p>
+<button onclick="add(290)">
+Add to Cart
+</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601">
+<h3>Spaghetti</h3>
+<p>฿220</p>
+<button onclick="add(220)">
+Add to Cart
+</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd">
+<h3>Fresh Salad</h3>
+<p>฿150</p>
+<button onclick="add(150)">
+Add to Cart
+</button>
+</div>
+
+</div>
+
+<br>
+<h3>
+Cart: ฿<span id="total">0</span>
+</h3>
+</div>
+
+<footer>
+Fresh Taste © 2026
+</footer>
+
+<script>
+let cart = [];
+function add(price) {
+   cart.push(price);
+   let total = 0;
+   for (let i = 0; i < cart.length; i++) {
+       total += cart[i];
+   }
+   document.getElementById("total").innerHTML = total;
+}
+function order() {
+   document.getElementById("menu").scrollIntoView();
+}
+function discount(price, percent) {
+   return price - (price * percent / 100);
+}
+</script>
+</body>
+</html>
